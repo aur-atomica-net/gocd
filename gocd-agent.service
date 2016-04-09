@@ -7,7 +7,7 @@ Wants=network.target
 [Service]
 user=gocd-agent
 group=gocd-agent
-EnvironmentFile=/etc/conf.d/gocd-agent
+EnvironmentFile=-/etc/conf.d/gocd-agent
 ExecStart=/usr/bin/java -jar /usr/share/gocd-agent/agent-bootstrapper.jar
 WorkingDirectory=/var/lib/gocd-agent
 Restart=always
