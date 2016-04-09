@@ -1,0 +1,16 @@
+
+[Unit]
+Description=GoCD Server
+After=network.target
+Wants=network.target
+
+[Service]
+user=gocd-server
+group=gocd-server
+ExecStart=/usr/bin/java -jar /usr/share/gocd-server/go.jar
+WorkingDirectory=/var/lib/gocd-server
+Restart=always
+RestartSec=20
+
+[Install]
+WantedBy=multi-user.target

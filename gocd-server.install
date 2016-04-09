@@ -1,0 +1,12 @@
+post_install() {
+    getent group gocd-server  &>/dev/null || groupadd -r gocd-server >/dev/null
+    getent passwd gocd-server &>/dev/null || \
+    useradd -r -g gocd-server -d /var/lib/gocd-server -c "gocd-server system account" -s /bin/false gocd-server >/dev/null
+
+    chown -R gocd-server:gocd-server /var/{log,lib}/gocd-server
+}
+
+pre_remove() {
+    getent passwd gocd-server &>/dev/null &&  userdel gocd-server >/dev/null
+    getent  group gocd-server &>/dev/null && groupdel gocd-server >/dev/null
+}

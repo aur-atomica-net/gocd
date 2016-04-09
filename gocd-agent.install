@@ -1,0 +1,12 @@
+post_install() {
+    getent group gocd-agent  &>/dev/null || groupadd -r gocd-agent >/dev/null
+    getent passwd gocd-agent &>/dev/null || \
+    useradd -r -g gocd-agent -d /var/lib/gocd-agent -c "gocd-agent system account" -s /bin/false gocd-agent >/dev/null
+
+    chown -R gocd-agent:gocd-agent /var/{log,lib}/gocd-agent
+}
+
+pre_remove() {
+    getent passwd gocd-agent &>/dev/null &&  userdel gocd-agent >/dev/null
+    getent  group gocd-agent &>/dev/null && groupdel gocd-agent >/dev/null
+}
