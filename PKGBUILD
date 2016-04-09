@@ -1,17 +1,17 @@
 # Maintainer: Jason R. McNeil <jason@jasonrm.net>
-# Contributor: Daichi Shinozaki <dsdseg@gmail.com>
 
 pkgname=('gocd-server' 'gocd-agent')
-pkgver=16.3.0
-pkgrel=3183
+_pkgver=16.3.0-3183
+pkgver=${_pkgver/-/.}
+pkgrel=1
 pkgdesc="Automate and streamline the build-test-release cycle for worry-free, continuous delivery of your product."
 arch=('any')
 url='https://www.go.cd'
 license=('Apache')
 depends=()
 makedepends=()
-source=("https://download.go.cd/binaries/${pkgver}-${pkgrel}/generic/go-server-${pkgver}-${pkgrel}.zip"
-        "https://download.go.cd/binaries/${pkgver}-${pkgrel}/generic/go-agent-${pkgver}-${pkgrel}.zip"
+source=("https://download.go.cd/binaries/${_pkgver}/generic/go-server-${_pkgver}.zip"
+        "https://download.go.cd/binaries/${_pkgver}/generic/go-agent-${_pkgver}.zip"
         "gocd-server.env"
         "gocd-agent.env"
         "gocd-server.service"
@@ -38,7 +38,7 @@ package_gocd-server() {
     install -m644 ${srcdir}/gocd-server.env ${pkgdir}/etc/conf.d/gocd-server
 
     install -d ${pkgdir}/usr/share/gocd-server
-    cp -r ${srcdir}/go-server-${pkgver}/* ${pkgdir}/usr/share/gocd-server/
+    cp -r ${srcdir}/go-server-${_pkgver%-*}/* ${pkgdir}/usr/share/gocd-server/
 
     install -d ${pkgdir}/var/{log,lib}/gocd-server
 }
@@ -54,7 +54,7 @@ package_gocd-agent() {
     install -m644 ${srcdir}/gocd-agent.env ${pkgdir}/etc/conf.d/gocd-agent
 
     install -d ${pkgdir}/usr/share/gocd-agent
-    cp -r ${srcdir}/go-agent-${pkgver}/* ${pkgdir}/usr/share/gocd-agent/
+    cp -r ${srcdir}/go-agent-${_pkgver%-*}/* ${pkgdir}/usr/share/gocd-agent/
 
     install -d ${pkgdir}/var/{log,lib}/gocd-agent
 }
