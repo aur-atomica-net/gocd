@@ -20,10 +20,10 @@ source=("https://download.go.cd/binaries/${_pkgver}/generic/go-server-${_pkgver}
         "gocd-agent.install")
 sha1sums=('df41ed91cb1cd1439be8643c3401f0fdabd8fcb5'
           '98a475c18eb8ae462c737daef9740ecec0b2caaa'
-          'da39a3ee5e6b4b0d3255bfef95601890afd80709'
-          'ef23f9560add05d39d1a65fc5cb55cc503d2847b'
-          '5caee35b2637895103b8e2569b7f912d026e35f5'
-          'ed2d5bf64c07f9b988e5cc81ea0cb735f08cb980'
+          'e4b548b7907e46af08770a541d1f603eb088751b'
+          '09e34d3fa50dfad83b5a883769f73ed62cf4154d'
+          '47e57904fe3cfed3c64cae593ddf2173a03032e5'
+          '24c5baa2bfc00203230adad5e8ddcad62639b9c9'
           'b1574082a0f83f16c0a78d3c39f749881a0d06ba'
           '2343b3eb907ee00e33ecd96e5b6a01f001ee582c')
 
