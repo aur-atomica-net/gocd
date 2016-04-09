@@ -5,8 +5,8 @@ After=network.target
 Wants=network.target
 
 [Service]
-user=gocd-agent
-group=gocd-agent
+User=gocd-agent
+Group=gocd-agent
 EnvironmentFile=-/etc/conf.d/gocd-agent
 ExecStart=/usr/bin/java $JAVA_OPTS -jar /usr/share/gocd-agent/agent-bootstrapper.jar $GO_SERVER $GO_SERVER_PORT $GO_AGENT_OPTS
 WorkingDirectory=/var/lib/gocd-agent
