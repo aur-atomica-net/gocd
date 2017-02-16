@@ -1,7 +1,7 @@
 # Maintainer: Jason R. McNeil <jason@jasonrm.net>
 
 pkgname=('gocd-server' 'gocd-agent')
-_pkgver=16.7.0-3819
+_pkgver=17.1.0-4511
 pkgver=${_pkgver/-/.}
 pkgrel=1
 pkgdesc="Automate and streamline the build-test-release cycle for worry-free, continuous delivery of your product."
@@ -18,8 +18,8 @@ source=("https://download.go.cd/binaries/${_pkgver}/generic/go-server-${_pkgver}
         "gocd-agent.service"
         "gocd-server.install"
         "gocd-agent.install")
-sha1sums=('962fc956413321f9897a3c439121dbf58ba69765'
-          '6af0e3a9eda4e849c48718821367ea4e728d72b9'
+sha1sums=('f36e3b803ba677887c7330e8a8f4470b91395b48'
+          '2052a8f5d7e6f0d307262be0c44b3abd587b7c10'
           'e4b548b7907e46af08770a541d1f603eb088751b'
           '09e34d3fa50dfad83b5a883769f73ed62cf4154d'
           'aeb696df73553d6245b0dc56245ae63ce5fee8d1'
